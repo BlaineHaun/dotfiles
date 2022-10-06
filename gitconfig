@@ -4,9 +4,9 @@
 	autoclrf = true
 	autocrlf = input
 [user]
-    name = Wes Curtis
-    email = wes.curtis@arivo.com
-    signingkey = 70AECDEF8BBC565A
+    name = Blaine Haun
+    email = Blaine.Haun@arivo.com
+    signingkey = AE7408463BBA82A1
 [color]
     ui = auto
 [alias]
@@ -31,3 +31,7 @@
     defaultRemote=origin
 [init]
 	defaultBranch = main
+[gpg]
+    program = gpg
+[commit]
+    gpgsign = true

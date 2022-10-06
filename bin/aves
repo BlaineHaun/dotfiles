@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-exec aws-vault exec swe-stg -- "$@"
+exec aws-vault exec swe-staging -- "$@"
 
