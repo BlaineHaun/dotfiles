@@ -298,9 +298,9 @@ export VAULT_ADDR=https://vault.counsyl.com
 
 alias ave="aws-vault exec"
 
-AWS_DEFAULT_REGION=us-east-1
-AWS_REGION=us-east-1
-GPG_TTY=$(tty)
+export AWS_DEFAULT_REGION=us-east-1
+export AWS_REGION=us-east-1
+export GPG_TTY=$(tty)
 
 alias gde="godotenv -f"
 
