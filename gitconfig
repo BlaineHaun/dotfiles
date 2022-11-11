@@ -31,3 +31,5 @@
     defaultRemote=origin
 [init]
 	defaultBranch = main
+[rebase]
+	autosquash = true

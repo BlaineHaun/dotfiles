@@ -20,11 +20,10 @@ shopt -s extglob
 shopt -s checkwinsize
 
 export GOPATH="$HOME/go"
-export GOROOT="$HOME/go/go1.18.3"
 export GO111MODULE=on
 export GOPRIVATE="gitlab.com/arivo-software-development/*"
 
-export PATH="$HOME/code/sre/infrastructure/util:$HOME/Library/Python/3.9/bin:$HOME/code/base-images/tools/bin:/opt/homebrew/opt/mysql-client/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH:$HOME/.bin:$HOME/.tool-bin:./vendor/bin:/opt/homebrew/bin:./node_modules/.bin:$GOROOT/bin:$GOPATH/bin:/usr/local/lib/node_modules/.bin:/usr/local/go/bin"
+export PATH="$HOME/code/sre/infrastructure/util:$HOME/Library/Python/3.9/bin:$HOME/code/base-images/tools/bin:/opt/homebrew/opt/mysql-client/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH:$HOME/.bin:$HOME/.tool-bin:./vendor/bin:/opt/homebrew/bin:./node_modules/.bin:$GOROOT/bin:$GOPATH/bin:/usr/local/lib/node_modules/.bin:/usr/local/go/bin:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
 
 function parse_git_branch {
     git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
@@ -63,6 +62,7 @@ alias gs="git status"
 alias gsh="git show"
 alias gshs="git show --stat"
 alias gl="git log"
+alias glo="git log --oneline"
 alias gln="git log --no-merges"
 alias ga="git add"
 alias gap="git add -p"
@@ -315,7 +315,7 @@ alias jirac="jiras | pbcopy"
 alias mrt="repo -t mrt | vim -"
 
 function gcasd() {
-    git clone gl:/arivo-software-development/$1 "${@:2}"
+    git clone git@gitlab.com:/arivo-software-development/$1 "${@:2}"
 }
 
 alias sc="vim ~/.ssh/config"
@@ -325,3 +325,7 @@ alias pvim="pbpaste | vim -"
 function cf() {
     cat "$1" | pbcopy
 }
+
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+fi

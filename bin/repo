@@ -37,6 +37,7 @@ config = [
         prefixes=[
             re.compile("^gl:/?arivo-software-development/"), 
             re.compile("^git@gitlab.com/arivo-software-development/"),
+            re.compile("^git@gitlab.com:arivo-software-development/"),
             re.compile("^gitlab:arivo-software-development"),
         ],
         suffixes={
