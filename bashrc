@@ -329,3 +329,5 @@ function cf() {
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
+
+complete -C '/usr/local/bin/aws_completer' aws
