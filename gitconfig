@@ -33,3 +33,5 @@
 	defaultBranch = main
 [rebase]
 	autosquash = true
+[gpg]
+	program = gpg

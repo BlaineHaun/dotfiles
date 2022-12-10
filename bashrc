@@ -23,7 +23,7 @@ export GOPATH="$HOME/go"
 export GO111MODULE=on
 export GOPRIVATE="gitlab.com/arivo-software-development/*"
 
-export PATH="$HOME/code/sre/infrastructure/util:$HOME/Library/Python/3.9/bin:$HOME/code/base-images/tools/bin:/opt/homebrew/opt/mysql-client/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH:$HOME/.bin:$HOME/.tool-bin:./vendor/bin:/opt/homebrew/bin:./node_modules/.bin:$GOROOT/bin:$GOPATH/bin:/usr/local/lib/node_modules/.bin:/usr/local/go/bin:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
+export PATH="$HOME/code/sre/infrastructure/util:$HOME/Library/Python/3.9/bin:$HOME/code/base-images/tools/bin:/opt/homebrew/opt/mysql-client/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH:$HOME/.bin:$HOME/.bin/aws-scripts:$HOME/.tool-bin:./vendor/bin:/opt/homebrew/bin:./node_modules/.bin:$GOROOT/bin:$GOPATH/bin:/usr/local/lib/node_modules/.bin:/usr/local/go/bin:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
 
 function parse_git_branch {
     git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
