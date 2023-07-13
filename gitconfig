@@ -24,9 +24,10 @@
 	gpgsign = true
 
 [url "git@bitbucket.org:"]
-	insteadOf = https://bitbucket.org
+    insteadOf = https://bitbucket.org
 [url "git@gitlab.com:"]
-	insteadOf = https://gitlab.com/
+    insteadOf = https://gitlab.com/
+
 [checkout]
     defaultRemote=origin
 [init]

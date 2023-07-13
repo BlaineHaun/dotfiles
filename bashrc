@@ -23,7 +23,7 @@ export GOPATH="$HOME/go"
 export GO111MODULE=on
 export GOPRIVATE="gitlab.com/arivo-software-development/*"
 
-export PATH="$HOME/code/sre/infrastructure/util:$HOME/Library/Python/3.9/bin:$HOME/code/base-images/tools/bin:/opt/homebrew/opt/mysql-client/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH:$HOME/.bin:$HOME/.bin/aws-scripts:$HOME/.tool-bin:./vendor/bin:/opt/homebrew/bin:./node_modules/.bin:$GOROOT/bin:$GOPATH/bin:/usr/local/lib/node_modules/.bin:/usr/local/go/bin:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
+export PATH="$HOME/code/sre/infra/infrastructure/util:$HOME/Library/Python/3.9/bin:$HOME/code/base-images/tools/bin:/opt/homebrew/opt/mysql-client/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH:$HOME/.bin:$HOME/.bin/aws-scripts:$HOME/.tool-bin:./vendor/bin:/opt/homebrew/bin:./node_modules/.bin:$GOROOT/bin:$GOPATH/bin:/usr/local/lib/node_modules/.bin:/usr/local/go/bin:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
 
 function parse_git_branch {
     git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
@@ -61,7 +61,8 @@ alias gb="parse_git_branch"
 alias gs="git status"
 alias gsh="git show"
 alias gshs="git show --stat"
-alias gl="git log"
+alias gl='git log --pretty=format:"%C(green)%h %C(yellow)%<(16,trunc)%aN %C(red)%<(12,trunc)%ar %C(reset)%<(135,trunc)%s"'
+alias glg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit "
 alias glo="git log --oneline"
 alias gln="git log --no-merges"
 alias ga="git add"
@@ -335,3 +336,6 @@ complete -C '/usr/local/bin/aws_completer' aws
  export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+
