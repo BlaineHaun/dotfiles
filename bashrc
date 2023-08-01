@@ -11,6 +11,8 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 
 source ~/.bash_secrets 2>/dev/null
 
+source ~/.bash_completion.d/rabbitmqadmin
+
 # append to the history file, don't overwrite it
 shopt -s histappend
 shopt -s extglob
@@ -339,3 +341,9 @@ complete -C '/usr/local/bin/aws_completer' aws
 
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
+
+#terraform aliases
+alias tf="terraform"
+alias tfp="terraform plan"
+alias tfa="terraform apply"
+alias tfi="terraform import"
